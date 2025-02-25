@@ -1,3 +1,4 @@
+---------------------------------------------------------------------------------------------------
 #___________MODELAGEM PREDITIVA DE PARTIDAS DE LEAGUE OF LEGENDS USANDO APRENDIZADO SUPERVISIONADO_________#
 
 Este estudo investiga a aplicação de modelos de aprendizado supervisionado para prever o
@@ -11,7 +12,7 @@ melhor desempenho, com AUC de até 0,930, demonstrando alta capacidade preditiva
 precisão dos modelos, o estudo destaca a importância de variáveis estratégicas, como diferenças
 de recursos no início da partida e escolhas de campeões, para a tomada de decisões em contextos
 competitivos.
-
+---------------------------------------------------------------------------------------------------
 Categoria Detalhes
 Manipulação e Transformação - Bibliotecas: Pandas e NumPy.
 - Ações: Carregamento, filtragem e criação
@@ -30,7 +31,7 @@ categóricas (ex: side).
 - TargetEncoder: Codificação de variáveis
 de alta cardinalidade (ex: picks e bans).
 Modelagem - Biblioteca: Scikit-learn.
-17
+---------------------------------------------------------------------------------------------------
 - Algoritmos:
 GradientBoostingClassifier (bo-
 osting), LogisticRegression (mo-
@@ -41,6 +42,7 @@ proximidade), DecisionTreeClassifier
 Validação - Técnicas: GroupShuffleSplit e
 GroupKFold (divisão estratificada e
 agrupada por gameid).
+---------------------------------------------------------------------------------------------------
 - Métricas: roc_auc_score,
 accuracy_score, f1_score.
 Visualização - Biblioteca: Matplotlib e Plotnine.
@@ -49,6 +51,7 @@ depois do escalonamento.
 Justificativas de Escolha - Scikit-learn: Eficiência em pipelines repro-
 dutíveis e integração entre pré-processamento
 e modelagem.
+---------------------------------------------------------------------------------------------------
 - TargetEncoder: Evita explosão dimensio-
 nal em variáveis de alta cardinalidade.
 - RobustScaler: Preserva integridade das
