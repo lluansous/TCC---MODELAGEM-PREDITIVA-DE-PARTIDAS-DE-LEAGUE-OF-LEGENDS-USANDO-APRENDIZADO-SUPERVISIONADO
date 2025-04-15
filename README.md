@@ -1,65 +1,81 @@
----------------------------------------------------------------------------------------------------
-#___________MODELAGEM PREDITIVA DE PARTIDAS DE LEAGUE OF LEGENDS USANDO APRENDIZADO SUPERVISIONADO_________#
+# 🎮 Modelagem Preditiva de Partidas de *League of Legends* usando Aprendizado Supervisionado
 
-Este estudo investiga a aplicação de modelos de aprendizado supervisionado para prever o
-resultado de partidas de League of Legends, um dos esportes eletrônicos mais populares do
-mundo. Foram analisadas diferentes abordagens, incluindo K-Nearest Neighbors (KNN),
-Regressão Logística, Gradient Boosting e Árvores de Decisão, utilizando um conjunto de
-dados extraído do Oracle’s Elixir. A metodologia envolveu a seleção criteriosa de variáveis, a
-eliminação de metadados irrelevantes e a validação dos modelos por meio de métricas como
-AUC-ROC e acurácia. Os resultados indicam que a Regressão Logística e o KNN obtiveram o
-melhor desempenho, com AUC de até 0,930, demonstrando alta capacidade preditiva. Além da
-precisão dos modelos, o estudo destaca a importância de variáveis estratégicas, como diferenças
-de recursos no início da partida e escolhas de campeões, para a tomada de decisões em contextos
-competitivos.
----------------------------------------------------------------------------------------------------
-Categoria Detalhes
-Manipulação e Transformação - Bibliotecas: Pandas e NumPy.
-- Ações: Carregamento, filtragem e criação
-de variáveis de diferença.
-Pré-processamento e Engenharia de Featu-
-res
-- Biblioteca: Scikit-learn.
-- Ferramentas: ColumnTransformer e
-Pipeline.
-- Técnicas: Escalonamento e codificação.
-- RobustScaler: Escalonamento robusto de
-features numéricas.
-- OneHotEncoder: Codificação de variáveis
-categóricas (ex: side).
-- Biblioteca adicional: Category Encoders.
-- TargetEncoder: Codificação de variáveis
-de alta cardinalidade (ex: picks e bans).
-Modelagem - Biblioteca: Scikit-learn.
----------------------------------------------------------------------------------------------------
-- Algoritmos:
-GradientBoostingClassifier (bo-
-osting), LogisticRegression (mo-
-delos lineares com regularização L2),
-KNeighborsClassifier (classificação por
-proximidade), DecisionTreeClassifier
-(árvores de decisão CART e ID3).
-Validação - Técnicas: GroupShuffleSplit e
-GroupKFold (divisão estratificada e
-agrupada por gameid).
----------------------------------------------------------------------------------------------------
-- Métricas: roc_auc_score,
-accuracy_score, f1_score.
-Visualização - Biblioteca: Matplotlib e Plotnine.
-- Gráficos: Boxplots comparativos antes e
-depois do escalonamento.
-Justificativas de Escolha - Scikit-learn: Eficiência em pipelines repro-
-dutíveis e integração entre pré-processamento
-e modelagem.
----------------------------------------------------------------------------------------------------
-- TargetEncoder: Evita explosão dimensio-
-nal em variáveis de alta cardinalidade.
-- RobustScaler: Preserva integridade das
-diferenças de recursos sem distorções por va-
-lores extremos.
-- Pipeline e ColumnTransformer: Encap-
-sulam etapas de pré-processamento e modela-
-gem, evitando vazamento de dados.
-- GroupKFold: Assegura que partidas não
-sejam divididas entre treino e teste, mantendo
-a independência dos dados.
+Este estudo investiga a aplicação de modelos de **aprendizado supervisionado** para prever o resultado de partidas de *League of Legends*, um dos eSports mais populares do mundo.
+
+Foram analisadas diferentes abordagens de *machine learning*, utilizando um conjunto de dados extraído do **Oracle’s Elixir**, com foco em variáveis estratégicas como **diferença de recursos no início da partida** e **escolhas de campeões**.
+
+Os modelos com melhor desempenho foram:
+
+- **Regressão Logística**
+- **K-Nearest Neighbors (KNN)**
+
+Com resultados expressivos, alcançando até **0.930 de AUC**, os modelos demonstraram alto poder preditivo e relevância prática para decisões em ambientes competitivos.
+
+---
+
+## ⚙️ Tecnologias e Metodologias Utilizadas
+
+### 📊 Manipulação e Transformação de Dados
+
+- **Bibliotecas:** `pandas`, `numpy`
+- **Tarefas realizadas:**
+  - Carregamento e limpeza de dados
+  - Criação de variáveis derivadas (ex: diferenças de recursos)
+  - Filtragem de metadados irrelevantes
+
+---
+
+### 🏗️ Pré-processamento e Engenharia de Features
+
+- **Bibliotecas:** `scikit-learn`, `category_encoders`
+- **Ferramentas:**
+  - `ColumnTransformer`, `Pipeline`
+  - `RobustScaler`: Escalonamento robusto para evitar distorções causadas por outliers
+  - `OneHotEncoder`: Codificação de variáveis categóricas (ex: lado da equipe)
+  - `TargetEncoder`: Codificação de alta cardinalidade (ex: picks e bans), evitando explosão dimensional
+
+---
+
+### 🤖 Modelagem Preditiva
+
+- **Biblioteca:** `scikit-learn`
+- **Modelos Avaliados:**
+  - `LogisticRegression` (com regularização L2)
+  - `KNeighborsClassifier`
+  - `GradientBoostingClassifier`
+  - `DecisionTreeClassifier`
+
+---
+
+### 📈 Validação e Avaliação de Desempenho
+
+- **Técnicas de Validação:**
+  - `GroupKFold` e `GroupShuffleSplit` (agrupamento por `gameid` para evitar vazamento entre treino/teste)
+
+- **Métricas Utilizadas:**
+  - `roc_auc_score`
+  - `accuracy_score`
+  - `f1_score`
+
+---
+
+### 📊 Visualização de Dados
+
+- **Bibliotecas:** `matplotlib`, `plotnine`
+- **Gráficos:**
+  - Boxplots comparando variáveis antes e depois do escalonamento
+  - Análises visuais de desempenho dos modelos
+
+---
+
+## ✅ Justificativas das Escolhas Técnicas
+
+- **Scikit-learn:** Ideal para criação de pipelines reprodutíveis e integração entre etapas do projeto.
+- **TargetEncoder:** Essencial para lidar com variáveis de alta cardinalidade (ex: campeões) sem inflar a dimensionalidade.
+- **RobustScaler:** Mantém a integridade dos dados ao minimizar a influência de valores extremos.
+- **Pipeline + ColumnTransformer:** Evitam vazamento de dados e permitem encapsulamento de etapas de forma limpa e modular.
+- **GroupKFold:** Garante a independência entre conjuntos de treino e teste, evitando que a mesma partida apareça em ambos.
+
+---
+
+📌 *Este projeto visa não apenas alcançar precisão preditiva, mas também fornecer insights úteis para decisões estratégicas em cenários competitivos de eSports.*
