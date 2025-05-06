@@ -1,4 +1,4 @@
-# 🎮 Modelagem Preditiva de Partidas de *League of Legends* usando Aprendizado Supervisionado
+#  Modelagem Preditiva de Partidas de *League of Legends* usando Aprendizado Supervisionado
 
 Este estudo investiga a aplicação de modelos de **aprendizado supervisionado** para prever o resultado de partidas de *League of Legends*, um dos eSports mais populares do mundo.
 
@@ -13,9 +13,9 @@ Com resultados expressivos, alcançando até **0.930 de AUC**, os modelos demons
 
 ---
 
-## ⚙️ Tecnologias e Metodologias Utilizadas
+## ⚙ Tecnologias e Metodologias Utilizadas
 
-### 📊 Manipulação e Transformação de Dados
+###  Manipulação e Transformação de Dados
 
 - **Bibliotecas:** `pandas`, `numpy`
 - **Tarefas realizadas:**
@@ -25,7 +25,7 @@ Com resultados expressivos, alcançando até **0.930 de AUC**, os modelos demons
 
 ---
 
-### 🏗️ Pré-processamento e Engenharia de Features
+###  Pré-processamento e Engenharia de Features
 
 - **Bibliotecas:** `scikit-learn`, `category_encoders`
 - **Ferramentas:**
@@ -36,7 +36,7 @@ Com resultados expressivos, alcançando até **0.930 de AUC**, os modelos demons
 
 ---
 
-### 🤖 Modelagem Preditiva
+###  Modelagem Preditiva
 
 - **Biblioteca:** `scikit-learn`
 - **Modelos Avaliados:**
@@ -47,7 +47,7 @@ Com resultados expressivos, alcançando até **0.930 de AUC**, os modelos demons
 
 ---
 
-### 📈 Validação e Avaliação de Desempenho
+###  Validação e Avaliação de Desempenho
 
 - **Técnicas de Validação:**
   - `GroupKFold` e `GroupShuffleSplit` (agrupamento por `gameid` para evitar vazamento entre treino/teste)
@@ -59,7 +59,7 @@ Com resultados expressivos, alcançando até **0.930 de AUC**, os modelos demons
 
 ---
 
-### 📊 Visualização de Dados
+###  Visualização de Dados
 
 - **Bibliotecas:** `matplotlib`, `plotnine`
 - **Gráficos:**
@@ -68,7 +68,7 @@ Com resultados expressivos, alcançando até **0.930 de AUC**, os modelos demons
 
 ---
 
-## ✅ Justificativas das Escolhas Técnicas
+##  Justificativas das Escolhas Técnicas
 
 - **Scikit-learn:** Ideal para criação de pipelines reprodutíveis e integração entre etapas do projeto.
 - **TargetEncoder:** Essencial para lidar com variáveis de alta cardinalidade (ex: campeões) sem inflar a dimensionalidade.
